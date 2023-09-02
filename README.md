@@ -10,7 +10,18 @@ Link de acesso para documentação do Trello REST API : https://developer.atlass
 </p>
 
 <p align="center">
- <a href="#Status do Projeto">Status do Projeto</a> • 
+ <a href="statusDoProjeto">Status do Projeto</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#prerequisitos">Pré-requisitos</a> • 
 </p>
+
+# Status do Projeto
+<h4 align="center"> 
+	🚧  Em construção...  🚧
+</h4>
+
+
+# Tecnologias 
+<h4 align="center"> 
+	 Node.js(>= v14.21.3)
+</h4>
