@@ -10,18 +10,29 @@ Link de acesso para documentação do Trello REST API : https://developer.atlass
 </p>
 
 <p align="center">
- <a href="statusDoProjeto">Status do Projeto</a> • 
+ <a href="#statusDoProjeto">Status do Projeto</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#prerequisitos">Pré-requisitos</a> • 
 </p>
 
 # Status do Projeto
-<h4 align="center"> 
-	🚧  Em construção...  🚧
+<h4> 
+   🚧  Em construção...  🚧
 </h4>
 
 
 # Tecnologias 
-<h4 align="center"> 
-	 Node.js(>= v14.21.3)
+<h4> 
+   Express (https://expressjs.com/pt-br/)
 </h4>
+
+# Pré-requisitos 
+<h4> 
+   Node.js(>= v14.21.3)
+</h4>
+
+<p> É necessário para conseguir realizar as operações no seu kamban a obtenção das duas chaves principais que farão a comunicação:
+a chave da sua conta e o token de acesso, abaixo segue o link de como obtelas:
+	link: https://trello.com/app-key
+</p>
+
