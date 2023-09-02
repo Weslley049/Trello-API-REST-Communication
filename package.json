@@ -1,0 +1,26 @@
+{
+  "name": "TrelloAPI",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "bin": {
+    "cli": "./src/utils/commands/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "2.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "lodash": "^4.17.21",
+    "multiparty": "^4.2.3",
+    "node-fetch": "2",
+    "nodemon": "^2.0.21",
+    "xlsx": "^0.18.5"
+  }
+}
