@@ -9,3 +9,8 @@ O projeto em questão é uma API de comunicação com a Trello REST API, que ofe
 Link de acesso para documentação do Trello REST API : https://developer.atlassian.com/cloud/trello/rest/api-group-actions/#api-group-actions
 </p>
 
+<p align="center">
+ <a href="#Status do Projeto">Status do Projeto</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#prerequisitos">Pré-requisitos</a> • 
+</p>
