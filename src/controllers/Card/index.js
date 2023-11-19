@@ -60,11 +60,72 @@ class CardController {
     return response.json(checkListCreated);
   }
 
-  async addCardTres(request, response) {
+
+  async editCard (request, response) {   
     try {
-      return response.json(board);
-    } catch (err) {}
+        const { id }  = request.params;
+        const data = request.query;
+     
+        const trelloService = new TrelloService();
+  
+        const cardUpdate = await trelloService.Card().editCard(id, data);
+    
+        return response.json(cardUpdate);
+    } catch(err){
+        return response.status(500).send(err);      
+    }
+
   }
-}
+    
+  async deleteCard (request, response) {   
+     try {
+        const { id }  = request.params;
+        
+        const trelloService = new TrelloService();
+  
+        const deletedCard = await trelloService.Card().deleteCard(id);
+    
+        return response.json(deletedCard);
+
+     
+    }catch(err){
+      return response.status(500).send(err); 
+    }
+  }
+    
+
+
+  async createAttachment (request, response) {   
+   
+    try {
+      const form = new Multiparty.Form();
+
+      form.parse(request, async (err, fields, files) => {
+        if (err) return response.status(500).send();
+  
+        const id = fields.id[0];
+        const name = fields.name[0];
+        const odsPath = files.file[0].path;
+
+   
+        const trelloService = new TrelloService();
+
+        const img = Buffer.from(odsPath, 'binary')
+    
+        const attachment = await trelloService.Card().createAttachment(id, {
+          name,
+          file: img
+        });
+
+        return response.status(200).send();
+      });
+    
+    }catch(err){
+      return response.status(500).json(err);            
+    }
+
+  }
+    
+ }
 
 module.exports = CardController;

@@ -26,7 +26,10 @@ routes.get(`/${resource}/lists/:id/cards`, listController.getCardsOfList);
 //Cards
 
 routes.get(`/${resource}/card/:id`, cardController.get);
+routes.put(`/${resource}/card/:id`,  cardController.editCard);
+routes.delete(`/${resource}/card/:id`,  cardController.deleteCard);
 
+routes.post(`/${resource}/cards/attachments`, cardController.createAttachment);
 routes.post(`/${resource}/cards/xlsx`, cardController.createCardsOfXlsx);
 routes.post(`/${resource}/cards/:listId`, cardController.createCardOnList);
 routes.post(

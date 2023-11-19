@@ -106,7 +106,50 @@ class Card {
     });
   }
 
-  async addCardTres(id) {}
+ 
+
+  async editCard (id, params = {}) {   
+    const query = Object.entries(params)
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&");
+
+  
+
+    return this.connection.FetchTrelloConnection({
+      url: `cards/${id}?key=${process.env.CHAVE_API}&token=${process.env.TOKEN_DE_ACESSO}&${query}`,
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+  }
+        
+ 
+
+  async deleteCard (id) {   
+    return this.connection.FetchTrelloConnection({
+      url: `cards/${id}?key=${process.env.CHAVE_API}&token=${process.env.TOKEN_DE_ACESSO}`,
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+  }
+        
+  async createAttachment (id, params={}) {   
+    const query =   Object.entries(params)
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&");
+
+    return this.connection.FetchTrelloConnection({
+      url: `cards/${id}/attachments?key=${process.env.CHAVE_API}&token=${process.env.TOKEN_DE_ACESSO}&${query}`,
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+      },
+    });
+  }
+        
 }
 
 module.exports = Card;
